@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="loaded()">
+    <p id="para" ondrag="console.log('hala ka')">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis natus ducimus inventore in dolorem iusto neque sed, pariatur qui optio voluptates nam soluta id assumenda ipsam officiis corrupti cupiditate temporibus.
+    </p>
+
+    <button onclick="message()" ondblclick="messageDouble()" onmouseover="console.log('Hi!')" onwheel="console.log('Hello')" >
+        Click Here
+    </button>
+
+    <input type="text" onkeydown="console.log('ug')" onkeyup="console.log('uh')">
+
+    <form action="#" onsubmit="console.log('form submitted')">
+        <input type="text" onchange="console.log('data inputted')" ondrag="console.log('hala ka')">
+        <input type="number" ondrag="console.log('hala ka')">
+        <input type="submit" ondrag="console.log('hala ka')">
+        <button type="submit" ondrag="console.log('hala ka')">Yah</button>
+    </form>
+    
+</body>
+<script>
+    function message() {
+        console.log('Clicked once');
+    }
+
+    function messageDouble() {
+        console.log('Double Clicked');
+    }
+
+    function loaded() {
+        console.log(document.getElementById("para").innerHTML);
+        console.log(document.getElementsByTagName("p")[0].innerHTML); //element collection is array, so need to define array key
+    }
+</script>
+</html>
