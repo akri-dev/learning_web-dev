@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body onload="loaded()">
+<body onload="loaded()" id="body-content">
     <p id="para" ondrag="console.log('hala ka')">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis natus ducimus inventore in dolorem iusto neque sed, pariatur qui optio voluptates nam soluta id assumenda ipsam officiis corrupti cupiditate temporibus.
     </p>
@@ -14,14 +15,19 @@
         Click Here
     </button>
 
+    <button onclick="emptyBody()">Empty the Page</button>
+
     <input type="text" onkeydown="console.log('ug')" onkeyup="console.log('uh')">
 
     <form action="#" onsubmit="console.log('form submitted')">
-        <input type="text" onchange="console.log('data inputted')" ondrag="console.log('hala ka')">
+        <input type="text" id="input-change" onchange="console.log('data inputted')" ondrag="console.log('hala ka')">
         <input type="number" ondrag="console.log('hala ka')">
         <input type="submit" ondrag="console.log('hala ka')">
         <button type="submit" ondrag="console.log('hala ka')">Yah</button>
     </form>
+    <button onclick="changeText()">Change Text</button>
+    <button onclick="changeType()">Change Type</button>
+    <button onclick="changeTextColor()">Change Color</button>
     
 </body>
 <script>
@@ -36,6 +42,26 @@
     function loaded() {
         console.log(document.getElementById("para").innerHTML);
         console.log(document.getElementsByTagName("p")[0].innerHTML); //element collection is array, so need to define array key
+    }
+
+    function emptyBody() {
+        var bodyEle = document.getElementById("body-content");
+        bodyEle.innerHTML = "";
+    }
+
+    function changeText() {
+        var defaultParagraph = document.getElementsByTagName("p");
+        defaultParagraph[0].innerHTML = "Text Changed";
+    }
+    
+    function changeType() {
+        var defaultAttribute = document.getElementById("input-change");
+        defaultAttribute.type = "date";
+    }
+
+    function changeTextColor() {
+        var redColor = document.getElementsByTagName("p");
+        redColor[0].style.color = "green"; 
     }
 </script>
 </html>
