@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DOM Manipulation</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body onload="loaded()" id="body-content">
@@ -28,7 +28,10 @@
     <button onclick="changeText()">Change Text</button>
     <button onclick="changeType()">Change Type</button>
     <button onclick="changeTextColor()">Change Color</button>
-    
+    <!-- <button onclick="createElement()">Click here!</button> createElement() is a pre-existing JS Method -->
+    <button onclick="generateElement()">Click here!</button> 
+    <div id="generateElement">
+    </div>
 </body>
 <script>
     function message() {
@@ -62,6 +65,16 @@
     function changeTextColor() {
         var redColor = document.getElementsByTagName("p");
         redColor[0].style.color = "green"; 
+    }
+
+    function generateElement() {
+        var paragraph = document.createElement("p"); //creates the element. createElement() pre-existing JS Method
+        var text = document.createTextNode("This is a paragraph."); //creates the string for paragraph
+        paragraph.appendChild(text); //text appended to paragraph
+
+        var div = document.getElementById("generateElement"); //creates the variable that fetches the ID to be appended
+
+        div.appendChild(paragraph); //appends the paragraph in the viewport via ID and adds it inside the div element
     }
 </script>
 </html>
