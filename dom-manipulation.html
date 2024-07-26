@@ -30,8 +30,11 @@
     <button onclick="changeTextColor()">Change Color</button>
     <!-- <button onclick="createElement()">Click here!</button> createElement() is a pre-existing JS Method -->
     <button onclick="generateElement()">Click here!</button> 
+    <button onclick="generateButton()">Create a new button</button>
     <div id="generateElement">
     </div>
+    <br>
+    <div id="newButton"></div>
 </body>
 <script>
     function message() {
@@ -75,6 +78,16 @@
         var div = document.getElementById("generateElement"); //creates the variable that fetches the ID to be appended
 
         div.appendChild(paragraph); //appends the paragraph in the viewport via ID and adds it inside the div element
+    }
+
+    function generateButton() {
+        var button = document.createElement("button");
+
+        button.innerHTML = "New Button";
+
+        var div = document.getElementById("newButton");
+
+        div.appendChild(button);
     }
 </script>
 </html>
